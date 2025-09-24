@@ -193,16 +193,7 @@ if df is not None:
     # Sidebar con filtros
     st.sidebar.title("🎛️ Panel de Control")
     
-    # Filtros de fecha
-    if 'fecha' in df.columns and not df['fecha'].isna().all():
-        min_date = df['fecha'].min().date()
-        max_date = df['fecha'].max().date()
-        date_range = st.sidebar.date_input(
-            "📅 Rango de fechas:",
-            value=(min_date, max_date),
-            min_value=min_date,
-            max_value=max_date
-        )
+   
     
     # Filtros adicionales
     departamentos = ['Todos'] + sorted(df['departamento'].unique().tolist())
