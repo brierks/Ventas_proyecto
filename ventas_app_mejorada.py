@@ -62,12 +62,7 @@ def load_and_process_data(path='dataSet1.csv'):
             df['Forma Pago'] = df['Forma Pago'].str.strip().str.upper()
             df['Forma Pago'] = df['Forma Pago'].replace(['', 'NAN', 'NONE'], 'SIN DATO')
         
-        # Crear variables de tiempo
-       # if 'fecha' in df.columns and not df['fecha'].isna().all():
-        #    df['anio'] = df['fecha'].dt.year.fillna(0).astype(int)
-         #   df['mes'] = df['fecha'].dt.month.fillna(0).astype(int)
-          #  df['dia_mes'] = df['fecha'].dt.day.fillna(0).astype(int)
-           # df['hora'] = df['fecha'].dt.hour.fillna(12).astype(int)
+       
             
             # Días de la semana en español
             dias_semana_espanol = {
@@ -190,11 +185,7 @@ if df is not None:
     # Sidebar con filtros
     st.sidebar.title("🎛️ Panel de Control")
 
-    # Filtros de fecha
-   if 'fecha' in df.columns and not df['fecha'].isna().all():
-    fecha_min = df['fecha'].min().date()
-    fecha_max = df['fecha'].max().date()
-    st.sidebar.info(f"📅 Periodo de datos:\n{fecha_min} al {fecha_max}")
+   
     
     # Información adicional sobre fechas (sin filtros)
     st.sidebar.markdown("**Datos temporales:**")
