@@ -601,9 +601,9 @@ else:
 st.markdown("---")
 st.markdown(
     """
-    <div style="text-align: center; padding: 1rem; background-color: #f0f2f6; border-radius: 10px;">
+    <div style="text-align: center; padding: 1rem; background-color: #00000; border-radius: 10px;">
         <p><strong>💼 Sistema Avanzado de Análisis de Ventas</strong></p>
-        <p>Dashboard sin restricciones de fecha | Desarrollado por Equipo 1</p>
+        <p> Desarrollado por Equipo 1</p>
     </div>
     """, 
     unsafe_allow_html=True
