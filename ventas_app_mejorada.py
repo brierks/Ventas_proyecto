@@ -867,7 +867,7 @@ st.markdown(
     """
     <div style="text-align: center; padding: 1rem; background-color: #f0f2f6; border-radius: 10px;">
         <p><strong>💼 Sistema Avanzado de Análisis de Ventas</strong></p>
-        <p>Desarrollado por <strong>Equipo 1</strong> | 📊 Dashboard con IA y Analytics</p>
+        <p>Desarrollado por <strong>Equipo</strong> | 📊 Dashboard con IA y Analytics</p>
     </div>
     """, 
     unsafe_allow_html=True
