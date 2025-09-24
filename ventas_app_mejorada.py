@@ -43,9 +43,7 @@ def load_and_process_data(path='dataSet1.csv'):
             if col in df.columns:
                 df[col] = pd.to_numeric(df[col], errors='coerce')
         
-        # Procesar fecha
-        if 'fecha' in df.columns:
-            df['fecha'] = pd.to_datetime(df['fecha'], errors='coerce')
+       
         
         # Rellenar valores nulos en categóricas
         cat_cols = ['codigo','codigoint','descripcion','unidad','departamento','lineas','marca','familia','folio','cliente','Forma Pago']
