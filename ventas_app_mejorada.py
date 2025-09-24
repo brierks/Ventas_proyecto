@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -197,11 +196,13 @@ if df is not None:
     if 'fecha' in df.columns and not df['fecha'].isna().all():
         min_date = df['fecha'].min().date()
         max_date = df['fecha'].max().date()
+         date_range = st.sidebar.date_input(
+            "📅 Rango de fechas:",
+            value=(min_date, max_date),
+            min_value=min_date,
+            max_value=max_date
+        )
         
-        
-    
-   
-    
     # Filtros adicionales
     departamentos = ['Todos'] + sorted(df['departamento'].unique().tolist())
     selected_depto = st.sidebar.selectbox("🏢 Departamento:", departamentos)
