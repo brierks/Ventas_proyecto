@@ -216,7 +216,7 @@ if df is not None:
     # Aplicar filtros
     df_filtered = df.copy()
     
-    if isinstance(date_range, (list, tuple)) and len(date_range) == 2:
+ 
 
     
     if selected_depto != 'Todos':
