@@ -15,7 +15,7 @@ warnings.filterwarnings('ignore')
 # Configuración de la página
 st.set_page_config(
     page_title="📊 Análisis de Ventas Avanzado",
-    page_icon="💰",
+
     layout="wide",
     initial_sidebar_state="expanded"
 )
