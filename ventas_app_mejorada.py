@@ -63,11 +63,11 @@ def load_and_process_data(path='dataSet1.csv'):
             df['Forma Pago'] = df['Forma Pago'].replace(['', 'NAN', 'NONE'], 'SIN DATO')
         
         # Crear variables de tiempo
-        if 'fecha' in df.columns and not df['fecha'].isna().all():
-            df['anio'] = df['fecha'].dt.year.fillna(0).astype(int)
-            df['mes'] = df['fecha'].dt.month.fillna(0).astype(int)
-            df['dia_mes'] = df['fecha'].dt.day.fillna(0).astype(int)
-            df['hora'] = df['fecha'].dt.hour.fillna(12).astype(int)
+       # if 'fecha' in df.columns and not df['fecha'].isna().all():
+        #    df['anio'] = df['fecha'].dt.year.fillna(0).astype(int)
+         #   df['mes'] = df['fecha'].dt.month.fillna(0).astype(int)
+          #  df['dia_mes'] = df['fecha'].dt.day.fillna(0).astype(int)
+           # df['hora'] = df['fecha'].dt.hour.fillna(12).astype(int)
             
             # Días de la semana en español
             dias_semana_espanol = {
