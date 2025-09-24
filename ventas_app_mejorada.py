@@ -198,7 +198,7 @@ if df is not None:
         min_date = df['fecha'].min().date()
         max_date = df['fecha'].max().date()
         
-        )
+        
     
    
     
