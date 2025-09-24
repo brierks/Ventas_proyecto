@@ -193,15 +193,15 @@ if df is not None:
     st.sidebar.title("🎛️ Panel de Control")
 
     # Filtros de fecha
-    if 'fecha' in df.columns and not df['fecha'].isna().all():
-        min_date = df['fecha'].min().date()
-        max_date = df['fecha'].max().date()
-         date_range = st.sidebar.date_input(
-            "📅 Rango de fechas:",
-            value=(min_date, max_date),
-            min_value=min_date,
-            max_value=max_date
-        )
+   if 'fecha' in df.columns and not df['fecha'].isna().all():
+    fecha_min = df['fecha'].min().date()
+    fecha_max = df['fecha'].max().date()
+    st.sidebar.info(f"📅 Periodo de datos:\n{fecha_min} al {fecha_max}")
+    
+    # Información adicional sobre fechas (sin filtros)
+    st.sidebar.markdown("**Datos temporales:**")
+    st.sidebar.write(f"• Registros con fecha: {df['fecha'].notna().sum():,}")
+    st.sidebar.write(f"• Sin fecha: {df['fecha'].isna().sum():,}")
         
     # Filtros adicionales
     departamentos = ['Todos'] + sorted(df['departamento'].unique().tolist())
@@ -217,9 +217,7 @@ if df is not None:
     df_filtered = df.copy()
     
     if isinstance(date_range, (list, tuple)) and len(date_range) == 2:
-        start_date, end_date = pd.to_datetime(date_range[0]), pd.to_datetime(date_range[1])
-        if 'fecha' in df_filtered.columns:
-            df_filtered = df_filtered[(df_filtered['fecha'] >= start_date) & (df_filtered['fecha'] <= end_date)]
+
     
     if selected_depto != 'Todos':
         df_filtered = df_filtered[df_filtered['departamento'] == selected_depto]
