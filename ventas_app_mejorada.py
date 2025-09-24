@@ -192,6 +192,13 @@ with st.spinner("🔄 Cargando y procesando datos..."):
 if df is not None:
     # Sidebar con filtros
     st.sidebar.title("🎛️ Panel de Control")
+
+    # Filtros de fecha
+    if 'fecha' in df.columns and not df['fecha'].isna().all():
+        min_date = df['fecha'].min().date()
+        max_date = df['fecha'].max().date()
+        
+        )
     
    
     
